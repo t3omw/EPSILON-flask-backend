@@ -1,0 +1,10 @@
+node_modules
+# Ignore virtual environments
+venv/
+env/
+.env
+__pycache__/
+*.pyc
+
+# Ignore secrets
+.env
