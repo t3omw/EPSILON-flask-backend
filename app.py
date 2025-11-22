@@ -19,7 +19,12 @@ import time
 
 app = Flask(__name__)
 # CORS(app)
-CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
+# CORS(app, supports_credentials=True, origins=["http://localhost:3000",
+#                                               "https://epsilon-frontend-8w2bngg55-chomps-projects-31b250e7.vercel.app"])
+CORS(app, resources={r"/*": {"origins": [
+    "http://localhost:3000", 
+    r"^https://.*\.vercel\.app$"
+]}}, supports_credentials=True)
 
 # Register Blueprints
 app.register_blueprint(feedback_bp)
