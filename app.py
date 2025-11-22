@@ -43,6 +43,10 @@ login_attempts = {}
 lockout_timestamps = {}
 LOCKOUT_DURATION_SECONDS = 300  # 5 minutes
 
+@app.route('/')
+def home():
+    return "Flask Backend is running!", 200
+
 @app.route("/login", methods=["POST"])
 def login():
     data = request.json
